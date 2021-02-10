@@ -1,0 +1,765 @@
+/*
+  ##### Mobile portrait (default CSS)
+  ##### Under 480px
+
+  ##################
+  ##### GLOBAL #####
+  ##################
+*/
+:root {
+  --main-font: 'Montserrat', 'Verdana', sans-serif;
+  --textarea-font: 'Text Me One', Verdana, sans-serif;
+  --main-color: rgb(245, 255, 253);
+  --main-background-color: #364250;
+  --main-background-color-alpha: rgba(47,57,66,0.4);
+  --text-shadow: #e85329;
+  --form-label-color: #a0bdbd;
+  --form-btn-submit: rgba(8, 112, 39,0.6);
+  --form-btn-submit-hover: rgba(8, 112, 39,1);
+  --global-margin: 4rem;
+  --form-error-color: #00eff1;
+  --anim-function: cubic-bezier(.85,-0.7,.31,1.77);
+  --custom-input-color: #e85329;
+  --custom-input-background: var(--main-color);
+  --custom-input-background-hover: rgb(106, 112, 117);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;  
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: var(--main-font);
+  font-size: 1.7rem;
+  color: var(--main-color);
+  background-color: var(--main-background-color);
+  width: auto;
+}
+input, select, textarea {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+.form-part-1 label, .form-part-1 span, .form-part-2 p, .form-part-3 p, .form-part-4 p {
+  user-select: none;
+} 
+/* hide source-container  for mobile/tablet */
+.source-container {
+  display: none;
+}
+/*
+  ##################
+  ##### HEADER #####
+  ##################
+*/
+header {
+  padding-bottom: 8rem;
+  background-image: linear-gradient(
+                      to bottom, 
+                      transparent 0%,
+                      var(--main-background-color-alpha) 65%,
+                      var(--main-background-color) 95%),
+                    url(img/blade-runner-2049.jpg);
+  background-size: cover;
+  font-weight: bold;
+}
+header h1, header p {
+  text-align: center;
+}
+header h1 {
+  font-size: 3.5rem;
+  padding: 6rem 0 2rem 0;
+  letter-spacing: .3rem;
+  text-shadow: 1px 1px 20px var(--text-shadow);
+}
+.description-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 15px var(--text-shadow);
+}
+.description-container span {
+  display: block;
+  width: max-content;
+  margin: auto;
+  padding-bottom: .5rem;  
+}
+/*
+  ##################
+  #####  MAIN  #####
+  ##################
+*/
+.container-card {
+  padding: 0 1.5rem;
+  width: 100%;
+  overflow: hidden;  
+  font-size: 2rem;
+  }
+/* ##### form part 1 ##### */
+.form-part-1 {
+  margin-bottom: var(--global-margin);
+}
+.form-part-1 > div{
+  position: relative;
+  height: 7rem;
+}
+input[type="text"], input[type="email"], input[type="number"]{
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  padding: .5rem 2rem;
+  font-size: 1.6rem;
+  font-style: oblique;
+  border-radius: 0;
+  border:solid var(--form-label-color);
+  border-width: 0 0 2px 0;
+  background-color: var(--main-background-color);
+  color: var(--main-color);
+}
+/* fix the red border when input is invalid */
+input[type="text"]:-moz-ui-invalid, input[type="email"]:-moz-ui-invalid, input[type="number"]:-moz-ui-invalid {
+  box-shadow: none;
+}
+input[type="text"], input[type="email"] {
+  width: 100%;  
+}
+input[type="number"] {
+  width: 6.7rem;
+  padding: .5rem 2rem;
+  /* fix appearance for firefox */
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.form-part-1 input:focus {
+  border-color: var(--main-color) ;
+}
+.form-part-1-label {
+  position: absolute; 
+  font-size: 2rem; 
+  bottom: 1.5rem;   
+  left: .5rem;
+  transition: bottom .4s var(--anim-function);
+  color: var(--form-label-color);
+}
+.label-focus {
+  bottom: 4rem;
+  color: var(--main-color) ;
+}
+.form-part-1-error {
+  position: absolute;
+  right: -100%;
+  bottom: 4rem;
+  font-size: 1.5rem;
+  color: var(--form-error-color); 
+  transition: right .4s var(--anim-function);
+}
+.input-invalid {
+  right: 0 ;    
+}
+/* #####  form part 2 ##### */
+.form-part-2 {
+  margin-bottom: var(--global-margin);
+}
+.form-part-2 p {
+  margin-bottom: 3rem;
+}
+.dropdown-container {
+  position: relative;
+}
+.form-part-2 select {
+  position: relative;
+  width: 100%;
+  font-size: 1.6rem;
+  font-style: oblique;
+  padding: 1rem;
+  margin-bottom: var(--global-margin);
+  border: transparent;
+  border-bottom: 2px solid;
+  border-color: var(--form-label-color);  
+  background-color: var(--main-background-color);
+  color: var(--main-color);
+  /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       
+}
+.form-part-2 select option {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  font-family: var(--textarea-font);
+}
+.select-cursor{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 1.6rem;  
+}
+@keyframes cursorAnim {
+  0% {
+    top: 1rem;
+    opacity: 1; 
+  }
+  50% {
+    top: -3rem; 
+    opacity: 0;       
+  }
+  100% {
+    top: 1rem;
+    opacity: 1; 
+    transform: rotateX(180deg);
+  }
+}
+@keyframes cursorAnimReverse {
+  0% {
+    transform: rotateX(180deg);
+    top: 1rem;
+    opacity: 1; 
+  }
+  50% {
+    top: -3rem; 
+    opacity: 0;       
+  }
+  100% {
+    top: 1rem;
+    opacity: 1;     
+  }
+}
+.select-cursor-anim {
+  animation: cursorAnim .6s var(--anim-function) forwards;
+}
+.select-cursor-anim-reverse {
+  animation: cursorAnimReverse .6s var(--anim-function) forwards;
+}
+.form-part-2 select:focus, .form-part-2 select:hover {
+  border-color: var(--main-color);
+}
+/* custom radio input */
+.label-radio-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1.6rem;
+}
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  transition: background-color .9s;
+}
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: var(--custom-input-background);
+}
+.radio-container input:focus ~ .radio-checkmark {
+  background-color: var(--form-label-color);
+  box-shadow: 0 0 0 2px var(--custom-input-color);
+}
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: var(--custom-input-color);
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+ 	top: .5rem;
+	left: .5rem;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: var(--main-color);
+}
+/* #####  form part 3 ##### */
+.label-checkbox-container {
+  display: flex;  
+  justify-content: space-around;
+  margin: 3rem 0;
+}
+/* custom checkbox */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1.6rem;
+}
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--custom-input-background);
+  transition: background-color .9s;
+}
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkbox-checkmark, .checkbox-container input:focus ~ .checkbox-checkmark{
+  background-color: var(--custom-input-background-hover);
+}
+.checkbox-container input:focus ~ .checkbox-checkmark {
+  outline: 2px solid var(--custom-input-color);
+}
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox-checkmark {
+  background-color: var(--custom-input-color);
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox-checkmark:after {
+  opacity: 1;
+  right: .5rem;
+}
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox-checkmark:after {
+  right: 200%;
+  top: 0;
+  width: .7rem;
+  height: 1.2rem;
+  border: solid var(--main-color);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all .4s var(--anim-function);
+}
+/* ##### form part 4 ##### */
+.form-part-4 p {
+  margin-bottom: 1rem;
+}
+.form-part-4 textarea {
+  width: 100%;
+  height: 5rem;
+  padding: 1rem;
+  resize: none;
+  cursor: pointer;
+  background-color: var(--main-background-color);
+  color: var(--form-label-color);
+  font-size: 1.5rem;
+  font-family:  var(--textarea-font);
+  font-style: oblique;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid var(--form-label-color);
+  transition: all .5s var(--anim-function);
+  overflow: hidden;
+}
+.form-part-4 textarea:focus, .form-part-4 textarea:hover {
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+.form-part-4 textarea:focus {
+  height: 15rem;
+}
+/* ##### submit section ##### */
+.container-link {
+  display: none;
+}
+#submit {
+  display: none;
+}
+.submit-btn {
+  float: right;
+  width: 20rem;
+  padding: 1.3rem;
+  margin: 4rem 0 2.5rem 0;
+  font-size: 2rem;
+  background-color: var(--main-background-color);
+  border: 2px solid var(--form-label-color);
+  color: var(--form-label-color);
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  transition: transform .4s var(--anim-function);
+  outline: none;
+}
+.submit-btn:hover, .submit-btn:focus {
+  color: var(--main-color);
+  border-color:var(--main-color);
+  transform: translate(-.5rem, -.5rem);
+}
+/*
+  ##################
+  ##### FOOTER #####
+  ##################
+*/
+footer {
+  margin-top: var(--global-margin);
+  padding: 4rem 0 2.5rem 0;
+  width: inherit;
+  text-align: center;
+  /*background-color: var(--main-color);*/
+  color: var(--main-color);
+}
+footer div {
+  margin-top: 2rem;
+}
+footer a {
+  padding: 0 1rem;
+  outline: none;
+}
+footer svg {
+  width: 1.9rem;
+  color: var(--form-label-color);
+  transition: all .4s var(--anim-function);
+  
+}
+footer a:hover svg {
+  color: var(--main-color);
+  transform: translateY(-.5rem);
+}
+footer a:focus svg {
+  color: var(--custom-input-color);
+}
+/* 
+  ##### Mobile landscape & larger - 
+  ##### Over 480px
+*/
+@media only screen and (min-width: 480px) {
+  header {
+    padding-bottom: 12rem;
+  }
+  main {
+    padding: 0 3.5rem;
+    }
+}
+/* 
+  ##### Tablet portrait
+  ##### Over 768px
+*/
+@media only screen and (min-width: 768px) {
+  header h1 {
+    font-size: 6rem;
+    letter-spacing: .3rem;
+  }
+  .description-container {
+    font-size: 4rem;
+  }
+}
+/* 
+  ##### Tablet landscape
+  ##### Over 992px
+*/
+@media only screen and (min-width: 992px) {
+  header {
+    padding-bottom: 30rem;
+  }
+  header h1 {
+    font-size: 7.5rem;
+    padding: 12rem 0 2rem 0;
+  }
+  .description-container {
+    font-size: 5rem;
+  }
+}
+/* 
+  ##### Laptop & larger
+  ##### Over 1200px
+*/
+@media only screen and (min-width: 1200px) {
+  :root {
+    --card-height: 38rem;
+    --card-width: 90rem;
+    --offset: -6rem;
+    --card-background-color: rgb(180, 197, 196);
+    --main-background-color-alpha: rgba(47,57,66,0.45);
+    --link-inactive-color: var(--main-background-color);
+    --link-active-color: rgb(232, 247, 245);
+  }
+  body {    
+    position: relative;
+    width: 100vw;
+    height: 100vh;    
+    background-image: linear-gradient(
+                        to bottom,
+                        var(--form-label-color),
+                        var(--main-color),
+                        var(--form-label-color)
+    );
+    overflow: hidden;
+  }
+  header, .container-card, .container-link, .source-container, footer {
+    position: absolute;
+  }
+  header {
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    height: max-content;
+    padding: 2rem 0 0 0;
+    margin:0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  header h1 {
+    font-size: 10rem;
+    padding: 0;
+    text-transform: uppercase;
+    text-shadow: none;
+  }
+  .description-container {
+    display: block;
+    font-size: 3rem;
+    text-shadow: none;
+    text-align: right;
+  }
+  .description-container span, .description-container p {
+    display: inline;
+  }
+  .container-card {    
+    padding:0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    width: var(--card-width);
+    height: var(--card-height);  
+    background-color: var(--form-label-color);   
+    box-shadow: 0px 0px 100px 25px var(--main-background-color); 
+    z-index: 5;
+    overflow: visible;
+  }
+  .container-form {
+    position: relative;
+    top:0;
+    left:0;
+    z-index: 2;
+    height: inherit;
+    background-image: linear-gradient(
+                        to right, 
+                        transparent,                        
+                        var(--main-background-color-alpha) 70%,
+                        var(--main-background-color),
+                        var(--main-background-color) 100%),
+                      url(img/blade-runner-2049.jpg),
+                      linear-gradient(
+                        to bottom,
+                        var(--main-background-color),
+                        var(--main-background-color)
+                      ); 
+    background-size: 60%;       
+    background-repeat: no-repeat, no-repeat, repeat;                 
+    transition: transform .4s var(--anim-function);
+  }
+  .form-part-1, .form-part-2, .form-part-3, .form-part-4 {
+    position: absolute;
+    display:block;
+    padding: 0 2rem;
+    margin: 0;
+    opacity: 0;
+    top: 50%;
+    left: 55%;
+    width: 40%;
+    transform: translateY(-50%);
+    transition: opacity .5s;
+  }
+  .form-part-1 {
+    overflow: hidden;
+  }
+  .container-card:hover .container-form {
+    transform: translate(var(--offset), var(--offset));
+  } 
+  .container-form-offset {
+    transform: translate(var(--offset), var(--offset));
+  }
+  .current-content {
+    z-index: 9;
+    opacity: 1;
+  }
+  .container-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    top: 0;
+    height: inherit;
+    width: calc(-1 * var(--offset));
+    z-index: 1;
+  }
+  .container-link div {
+    position: relative;
+    top: -3rem;
+  }
+  .link {
+    display: block;
+    width: calc(-1 * (var(--offset) + 4.2rem));
+    height: calc(-1 * (var(--offset) + 4.2rem));
+    background-color: var(--link-inactive-color);
+    border-radius: 50%;
+    margin: 1.5rem 0;
+    outline: none;
+    transition: transform .4s var(--anim-function);
+  }
+  .current-link {
+    transform: scale(1.4,1.4);
+    background-color: var(--link-active-color);
+    box-shadow:1px 0px 10px var(--main-background-color);
+  }
+  .submit-btn {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    width: 10rem;
+    padding: 1rem;
+    margin: 0;
+    color: var(--main-color);
+    border-color: var(--main-background-color);
+    outline: none;
+    z-index: 1;
+  }
+  .submit-btn:hover{
+    z-index: 3;
+  }
+  .submit-btn:focus {
+    border-color: var(--main-color);
+    transform: translate(-.5rem, -.5rem);
+  }
+  /* aside source content */
+  .source-container {
+    bottom: 0;
+    right: 0;
+    display: block;
+    background-color: transparent;    
+    padding: 3rem;
+    overflow: hidden;   
+    transform: translate(85%,85%);
+    transition: all .4s ease-out .2s;
+  }
+  .source-container:hover {
+    display: block;
+    background-color: var(--main-background-color);
+    transform: translate(0,0);
+  }
+  .source-icon svg {
+    color: var(--main-background-color);
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    width: 2.5rem
+  }
+  .source-container:hover .source-icon svg{
+    color: var(--main-color);
+  }
+  .source-container h3, .source-container h4 {
+    color: transparent;
+  }
+  .source-container h4 a[href*="license"]:hover {
+    color: var(--custom-input-color);
+  }
+  .source-container:hover h3 {
+    color: var(--form-label-color);
+  }
+  .source-container:hover h4 {
+    color: var(--form-label-color);
+  }
+  .source-container h4 {
+    margin-left: 1.5rem;
+  }
+  .source-container ul li {
+    list-style-type: none;
+  }
+  .source-container a {
+   color: transparent;
+  }
+  .source-container:hover a {
+    color: var(--main-color);
+  }
+  .source-container ul a {
+    margin-left: 4rem;
+  }
+  .source-container ul a:hover {
+    color: var(--custom-input-color);
+    transform: translate(0,1rem);
+  }
+  footer {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    margin:0;
+    padding:0;
+    z-index: 0;
+    font-weight: bold;
+  }
+  footer small {
+    color: var(--main-background-color);
+  }
+  footer div {
+    margin: 1.5rem 0 1rem 0;
+  }
+  footer a {
+    padding: 0 .5rem;
+  }
+  footer .svg-inline--fa {
+    width: 1.9rem;
+    color: var(--main-background-color);
+    transition: all .4s var(--anim-function);
+  }
+  footer a:hover .svg-inline--fa {
+    color: var(--custom-input-color);
+    transform: translateY(-.5rem);
+    -webkit-filter: drop-shadow( 3px 3px 2px var(--main-background-color));
+  filter: drop-shadow( 3px 3px 2px var(--main-background-color));
+  }
+}

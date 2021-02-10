@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Turwaith">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+    <title>Survey Form</title>
+    <script src="script.js" async></script>
+    <!--<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async></script>-->
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Movies Survey</h1>
+        <div class="description-container">
+            <span>Hey !</span>
+            <p id="description">We need your opinion !</p>
+        </div>
+    </header>
+    <main class="container-card">
+        <div class="container-form" id="container-form">
+            <form action="#" id="survey-form" autocomplete="off" method="POST" novalidate>
+                <div id="form-part-1" class="form-content form-part-1 current-content" data-form-part="1">
+                    <div>
+                        <input type="text" id="name" name="user-name" pattern="[a-z,A-Z]{3,}" required placeholder=" "
+                        data-form-part="1" class="tab-focus">
+                        <label for="name" id="name-label" class="form-part-1-label">Name</label>
+                        <span class="form-part-1-error">Min 3 letters</span>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="user-mail" pattern="[a-z,.,-]{2,}@[a-z]{2,}\.[a-z]{2,}"
+                            required placeholder=" " data-form-part="1" class="tab-focus">
+                        <label for="email" id="email-label" class="form-part-1-label">Email</label>
+                        <span class="form-part-1-error">email@dom.com</span>
+                    </div>
+                    <div>
+                        <input type="number" min="15" max="130" id="number" name="user-age" placeholder=" " data-form-part="1" class="tab-focus">
+                        <label for="number" id="number-label" class="form-part-1-label">Age</label>
+                        <span class="form-part-1-error">Between 15 and 130</span>
+                    </div>
+                </div>
+                <div id="form-part-2" class="form-content form-part-2" data-form-part="2">
+                    <p>How often do you watch a movie?</p>
+                    <div class="dropdown-container">
+                        <select name="user-cinephile" id="dropdown" data-form-part="2" class="tab-focus">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="monthly">Monthly (two or three)</option>
+                            <option value="weekly">Weekly (two or three)</option>
+                            <option value="daily">Daily (one, even more)</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas"
+                            data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 select-cursor"
+                            role="img" viewBox="0 0 448 512">
+                            <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 
+                                0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 
+                                284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 
+                                381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg>
+                    </div>
+                    <p>Would you recommend this movie to a friend?</p>
+                    <div class="label-radio-container">
+                        <label class="radio-container">
+                            No
+                            <input type="radio" name="user-recommend" value="true" data-form-part="2" class="tab-focus">
+                            <span class="radio-checkmark"></span>
+                        </label>
+                        <label class="radio-container">
+                            Yes
+                            <input type="radio" name="user-recommend" value="false" data-form-part="2" class="tab-focus">
+                            <span class="radio-checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div id="form-part-3" class="form-content form-part-3" data-form-part="3">
+                    <p>What do you liked the most ?</p>
+                    <div class="label-checkbox-container">
+                        <div>
+                            <label class="checkbox-container">
+                                Image
+                                <input type="checkbox" name="user-like" value="image" data-form-part="3" class="tab-focus">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Music
+                                <input type="checkbox" name="user-like" value="music" data-form-part="3" class="tab-focus">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Scenario
+                                <input type="checkbox" name="user-like" value="scenario" data-form-part="3" class="tab-focus">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox-container">
+                                Actors
+                                <input type="checkbox" name="user-like" value="actors" data-form-part="3" class="tab-focus">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Sound
+                                <input type="checkbox" name="user-like" value="sound" data-form-part="3" class="tab-focus">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Editing
+                                <input type="checkbox" name="user-like" value="editing" data-form-part="3" class="tab-focus">
+                                <span class="checkbox-checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="form-part-4" class="form-content form-part-4" data-form-part="4">
+                    <p>Any comments ?</p>
+                    <textarea name="user-comment" cols="30" rows="10" data-form-part="4" class="tab-focus"></textarea>
+                </div>
+                <input type="submit" id="submit" value="Send" disabled>
+            </form>
+        </div>
+        <div class="container-link" id="container-link">
+            <div>
+                <a href="#form-part-1" class="link current-link" tabindex="-1">&nbsp;</a>
+                <a href="#form-part-2" class="link" tabindex="-1">&nbsp;</a>
+                <a href="#form-part-3" class="link" tabindex="-1">&nbsp;</a>
+                <a href="#form-part-4" class="link" tabindex="-1">&nbsp;</a>
+            </div>
+        </div>
+        <button type="submit" form="survey-form" class="submit-btn" id="submit-btn">Send</button>
+    </main>
+    <aside class="source-container">
+        <span class="source-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas"
+                data-icon="info-circle" class="svg-inline--fa fa-info-circle fa-w-16" role="img" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 
+                 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 
+                 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 
+                 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 
+                 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z" /></svg>
+        </span>        
+            <h3>Sources</h3>
+            <h4>Icons (<small><a href="https://fontawesome.com/license" target="_blank" tabindex="-1">Fontawesome license</a></small>)</h4>
+            
+            <ul>
+                <li><a href="https://fontawesome.com/icons/chevron-down?style=solid" target="_blank" tabindex="-1">Chevron</a></li>
+                <li><a href="https://fontawesome.com/icons/github?style=brands" target="_blank" tabindex="-1">Github</a></li>
+                <li><a href="https://fontawesome.com/icons/codepen?style=brands" target="_blank" tabindex="-1">Codepen</a></li>
+                <li><a href="https://fontawesome.com/icons/info-circle?style=solid" target="_blank" tabindex="-1">Info-circle</a></li>
+            </ul>
+            <h4>Fonts</h4>
+            <ul>
+                <li><a href="https://fonts.google.com/specimen/Montserrat?query=mont" target="_blank" tabindex="-1">Montserrat</a></li>
+                <li><a href="https://fonts.google.com/specimen/Text+Me+One?query=text+m" target="_blank" tabindex="-1">Text me</a></li>
+            </ul>
+            <h4>Images</h4>
+            <ul>
+                <li><a href="https://image.tmdb.org/t/p/original/jLul37v1NcF8XpdSEh4RHsmGocA.jpg" target="_blank" tabindex="-1">Blade Runner 2049</a>
+                </li>
+            </ul>
+    </aside>
+    <footer>
+        <small>
+            turwaith
+        </small>
+        <div>
+            <a href="https://github.com/turwaith" target="_blank" class="fa">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab"
+                    data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" viewBox="0 0 496 512">
+                    <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 
+                 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 
+                 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 
+                 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 
+                 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 
+                 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 
+                 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 
+                 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 
+                 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 
+                 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 
+                 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 
+                 0-6.2-1.4-2.3-4-3.3-5.6-2z" /></svg></a>
+            <a href="https://codepen.io/turwaith" target="_blank" class="fa">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab"
+                    data-icon="codepen" class="svg-inline--fa fa-codepen fa-w-16" role="img" viewBox="0 0 512 512">
+                    <path fill="currentColor" d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 
+                 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 
+                 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 
+                 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 
+                 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 
+                 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 
+                 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z" /></svg></a>
+        </div>
+    </footer>
+</body>
+
+</html>
